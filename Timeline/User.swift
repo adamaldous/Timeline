@@ -11,11 +11,11 @@ import Foundation
 struct User: Equatable {
     
     var username: String
-    var identifier: String
-    var bio: String? = nil
-    var url: String? = nil
+    var identifier: String?
+    var bio: String?
+    var url: String?
     
-    init(username: String, identifier: String, bio: String?, url: String?) {
+    init(username: String, identifier: String? = nil, bio: String? = nil, url: String? = nil) {
         
         self.username = username
         self.identifier = identifier

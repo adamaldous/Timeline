@@ -1,5 +1,5 @@
 //
-//  Comment.swift
+//  Like.swift
 //  Timeline
 //
 //  Created by Adam Aldous on 2/23/16.
@@ -8,23 +8,21 @@
 
 import Foundation
 
-struct Comment: Equatable {
+struct Like: Equatable {
     
     var username: String
-    var text: String
     var postIdentifier: String
     var identifier: String?
     
-    init(username: String, text: String, postIdentifier: String, identifier: String? = nil) {
+    init(username: String, postIdentifier: String, identifier: String? = nil) {
         
         self.username = username
-        self.text = text
         self.postIdentifier = postIdentifier
         self.identifier = identifier
     }
 }
 
-func ==(lhs: Comment, rhs: Comment) -> Bool {
+func ==(lhs: Like, rhs: Like) -> Bool {
     
     return lhs.username == rhs.username && lhs.identifier == rhs.identifier
 }
