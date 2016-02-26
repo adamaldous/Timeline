@@ -179,9 +179,7 @@ class UserSearchTableVC: UITableViewController, UISearchResultsUpdating {
                 destinationViewController?.user = user
             }
         }
-        
     }
-    
 }
 
 
