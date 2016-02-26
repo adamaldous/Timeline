@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import SafariServices
 
-class ProfileVC: UIViewController {
+class ProfileVC: UIViewController, UICollectionViewDataSource, ProfileHeaderCollectionReusableViewDelegate {
     
     var user: User?
+    
+    var userPosts: [Post] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +24,38 @@ class ProfileVC: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func updateBasedOnUser() {
+        
+        guard let user = user else {return}
+        
+        title = user.username
+        
+        PostController.postsForUser(user) { (posts) -> Void in
+            if let posts = posts {
+                self.userPosts = posts
+            } else {
+                self.userPosts = []
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.collectionView.reloadData()
+            })
+        }
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return userPosts.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "headerView", forIndexPath: indexPath) as! ProfileHeaderCollectionReusableView
+        
+        headerView.updateWithUser(user!)
+        headerView.delegate = self
+        
+        return headerView
     }
     
 

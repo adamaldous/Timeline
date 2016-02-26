@@ -130,8 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				01E3FC281BE92C7600187536 /* Main.storyboard */,
-				96508E201C7FDC4900E8C1D0 /* ImageCollectionViewCell.swift */,
-				96508E1E1C7FD6D900E8C1D0 /* ProfileHeaderCollectionReusableView.swift */,
+				960FACA51C7FDF1F00D42641 /* Views */,
 				964B1CC71C7D181C00DEB54B /* View Controllers */,
 				964B1CCE1C7D1F1E00DEB54B /* Model Controllers */,
 				964B1CC61C7D17DA00DEB54B /* Models */,
@@ -159,6 +158,15 @@
 				01E3FC461BE92C7700187536 /* Info.plist */,
 			);
 			path = TimelineUITests;
+			sourceTree = "<group>";
+		};
+		960FACA51C7FDF1F00D42641 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96508E201C7FDC4900E8C1D0 /* ImageCollectionViewCell.swift */,
+				96508E1E1C7FD6D900E8C1D0 /* ProfileHeaderCollectionReusableView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		964B1CC61C7D17DA00DEB54B /* Models */ = {
