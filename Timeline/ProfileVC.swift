@@ -9,11 +9,13 @@
 import UIKit
 
 class ProfileVC: UIViewController {
+    
+    var user: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        print(user)
     }
 
     override func didReceiveMemoryWarning() {
