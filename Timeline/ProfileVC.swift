@@ -12,8 +12,10 @@ import SafariServices
 class ProfileVC: UIViewController, UICollectionViewDataSource, ProfileHeaderCollectionReusableViewDelegate {
     
     var user: User?
-    
     var userPosts: [Post] = []
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,5 +70,5 @@ class ProfileVC: UIViewController, UICollectionViewDataSource, ProfileHeaderColl
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
